@@ -18,7 +18,7 @@ import pickle
 app = Flask(__name__)
 
 #Load the trained model. (Pickle file)
-model = pickle.load(open('models/model.pkl', 'rb'))
+model = pickle.load(open('model/model.pkl', 'rb'))
 
 #Define the route to be home. 
 #The decorator below links the relative route of the URL to the function it is decorating.
@@ -45,7 +45,7 @@ def predict():
 
     output = round(prediction[0], 2)
 
-    return render_template('index.html', prediction_text='Percent with heart disease is {}'.format(output))
+    return render_template('index.html', prediction_text='Survived? {}'.format(output))
 
 
 #When the Python interpreter reads a source file, it first defines a few special variables. 
